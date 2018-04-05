@@ -1,11 +1,7 @@
 FROM alpine:3.5
 
-LABEL maintainer="Michael Laccetti <michael@laccetti.com> (https://laccetti.com/)"
-
 ARG ELASTICSEARCH_CURATOR_VERSION
-ENV ELASTICSEARCH_CURATOR_VERSION ${ELASTICSEARCH_CURATOR_VERSION:-4.2.6}
-ARG ELASTICSEARCH_CURATOR_CLI=curator_cli
-ENV ELASTICSEARCH_CURATOR_CLI ${ELASTICSEARCH_CURATOR_CLI:-curator_cli}
+ENV ELASTICSEARCH_CURATOR_VERSION ${ELASTICSEARCH_CURATOR_VERSION:-5.4.0}
 
 RUN apk --no-cache --update add py2-pip bash && \
   pip install --upgrade pip && \
@@ -23,4 +19,4 @@ ENV ELASTICSEARCH_CURATOR_ARGS=
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-CMD ["sh", "-c", "$ELASTICSEARCH_CURATOR_CLI"]
+CMD ["sh", "-c", "curator_cli"]
