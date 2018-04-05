@@ -18,13 +18,13 @@ OLDER_THAN_IN_DAYS=30
 **Specifying the host**
 
 ```
-docker run -d -e "ELASTICSEARCH_HOST=my.random.host" mlaccetti/elasticsearch-curator
+docker run -d -e "ELASTICSEARCH_HOST=my.random.host" scentregroup/docker-elasticsearc-curator
 ```
 
 **Using TLS and Authentication**
 
 ```
-docker run -d -e "ELASTICSEARCH_HOST=my.random.host" -e "ELASTICSEARCH_CURATOR_ARGS=--use-ssl --http_auth username:password" mlaccetti/elasticsearch-curator
+docker run -d -e "ELASTICSEARCH_HOST=my.random.host" -e "ELASTICSEARCH_CURATOR_ARGS=--use-ssl --http_auth username:password" scentregroup/docker-elasticsearc-curator
 ```
 
 ## Building
@@ -33,11 +33,10 @@ docker run -d -e "ELASTICSEARCH_HOST=my.random.host" -e "ELASTICSEARCH_CURATOR_A
 
 ```
 ELASTICSEARCH_CURATOR_VERSION=5.4.0
-ELASTICSEARCH_CURATOR_CLI=curator_cli
 ```
 
 ### Example
 
 ```
-docker build --build-arg ELASTICSEARCH_CURATOR_VERSION=5.4.0 --build-arg ELASTICSEARCH_CURATOR_CLI=curator -t scentregroup/elasticsearc-curator:5.4.0 .
+docker build --build-arg ELASTICSEARCH_CURATOR_VERSION=5.4.0 -t scentregroup/docker-elasticsearc-curator:5.4.0 .
 ```
