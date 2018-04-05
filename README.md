@@ -18,13 +18,13 @@ OLDER_THAN_IN_DAYS=30
 **Specifying the host**
 
 ```
-docker run -d -e "ELASTICSEARCH_HOST=my.random.host" scentregroup/docker-elasticsearc-curator
+docker run -d -e "ELASTICSEARCH_HOST=my.random.host" scentregroup/docker-elasticsearc-curator:5.4.0
 ```
 
 **Using TLS and Authentication**
 
 ```
-docker run -d -e "ELASTICSEARCH_HOST=my.random.host" -e "ELASTICSEARCH_CURATOR_ARGS=--use-ssl --http_auth username:password" scentregroup/docker-elasticsearc-curator
+docker run -d -e "ELASTICSEARCH_HOST=my.random.host" -e "ELASTICSEARCH_CURATOR_ARGS=--use-ssl --http_auth username:password" scentregroup/docker-elasticsearc-curator:5.4.0
 ```
 
 ## Building
