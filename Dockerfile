@@ -1,7 +1,6 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
 ARG ELASTICSEARCH_CURATOR_VERSION
-ENV ELASTICSEARCH_CURATOR_VERSION ${ELASTICSEARCH_CURATOR_VERSION:-5.6.0}
 
 RUN apk --no-cache --update add py2-pip bash && \
   pip install --upgrade pip && \

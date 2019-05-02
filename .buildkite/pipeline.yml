@@ -2,7 +2,7 @@ steps:
   - label: ":docker: build + push + rmi"
     env:
       HTTP_PROXY: "http://proxy.ops.scentregroup.io:3128"
-      ELASTICSEARCH_CURATOR_VERSION: "5.6.0"
+      ELASTICSEARCH_CURATOR_VERSION: "5.7.5"
     command:
       - docker build --build-arg http_proxy=\${HTTP_PROXY} --build-arg https_proxy=\${HTTP_PROXY} -t ${BUILDKITE_ORGANIZATION_SLUG}/${BUILDKITE_PIPELINE_SLUG}:\${ELASTICSEARCH_CURATOR_VERSION} ./
       - docker push ${BUILDKITE_ORGANIZATION_SLUG}/${BUILDKITE_PIPELINE_SLUG}:\${ELASTICSEARCH_CURATOR_VERSION}
